@@ -1,4 +1,5 @@
 import random
+from chat import app
 import difflib
 import streamlit as st
 from difflib import SequenceMatcher
@@ -177,4 +178,5 @@ def get_bot_response():
     return jsonify({'response': response})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+    from gunicorn.app.wsgiapp import run
+    run(app, host='0.0.0.0', port=80)
