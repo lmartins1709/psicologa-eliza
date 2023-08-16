@@ -1,5 +1,6 @@
 import random
 import difflib
+import os
 import streamlit as st
 from difflib import SequenceMatcher
 from flask import Flask, render_template, request, jsonify
@@ -178,4 +179,4 @@ def get_bot_response():
 
 if __name__ == "__main__":
     from gunicorn.app.wsgiapp import run
-    run(app, host='0.0.0.0', port=80)
+    run(app, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
