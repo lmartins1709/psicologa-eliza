@@ -1,5 +1,4 @@
 import random
-from chat import app
 import difflib
 import streamlit as st
 from difflib import SequenceMatcher
